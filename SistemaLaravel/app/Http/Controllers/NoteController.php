@@ -18,7 +18,7 @@ class NoteController extends Controller
             'title' => 'required',
             'content' => 'required',
         ],[
-            'required' => 'O campo :attribute é obrigatório!'
+            'required' => 'The field :attribute is required!'
         ]);
 
         $note = $request->except('_token');
@@ -33,7 +33,7 @@ class NoteController extends Controller
             'title' => 'required',
             'content' => 'required',
         ],[
-            'required' => 'O campo :attribute é obrigatório!'
+            'required' => 'The field :attribute is required!'
         ]);
 
         $note = $request->except('_token');

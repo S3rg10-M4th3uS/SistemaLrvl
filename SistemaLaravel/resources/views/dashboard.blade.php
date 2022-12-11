@@ -6,6 +6,7 @@
     </x-slot>
 
     <x-slot name="content">
+        
     <div class="container">
         <div class="d-flex gap-2 justify-content-between
             bg-light border border-2 p-3 my-4">
@@ -104,6 +105,21 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-success">
+                        Edit</button>
     </x-slot>
+    @section('scripts')
+    <script>
+        const exampleModal = document.getElementById('editar_anotacao')
+        exampleModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget
+            const recipient = button.getAttribute('data-bs-note')
+            const note = JSON.parse(recipient);
+            document.getElementById('id').value = note.id;
+            document.getElementById('title').value = note.title;
+            document.getElementById('content').value = note.content;
+        })
+    </script>
+@endsection
 
 </x-app-layout>
